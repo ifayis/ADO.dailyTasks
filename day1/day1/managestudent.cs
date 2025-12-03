@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace day1
 {
-        public class managestudent
-        {
+    public class managestudent
+    {
         private string conn = "server=localhost\\SQLEXPRESS;database=studentsDB;trusted_connection=true";
 
         public void getdetails()
@@ -37,5 +37,5 @@ namespace day1
                 }
             }
         }
-        }
+    }
 }

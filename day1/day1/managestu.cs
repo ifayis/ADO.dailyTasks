@@ -9,33 +9,25 @@ namespace day1
 {
     public class managestu
     {
-        private string conn = "server=localhost\\SQLEXPRESS;database=studentsDB;trusted_connection=true";
+        private string connection = "server=localhost\\SQLEXPRESS;database=studentsDB;trusted_connection=true";
 
-        public void getdetails()
+        // insert
+        public void insertdata(Student stu)
         {
-            string query = @"
-                select s.id, s.name, d.department, d.mark
-                from students s
-                inner join studentdetails d
-                on s.detailsid = d.detailsid";
+            string query = @"insert into Students(id, name, detailsid)
+              values (@id, @name, @detailsid);";
 
-            using (SqlConnection connect = new SqlConnection(conn))
+            using (SqlConnection con = new SqlConnection(connection))
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                SqlCommand cmd = new SqlCommand(query, connect);
-                connect.Open();
+                cmd.Parameters.AddWithValue("@id", stu.id);
+                cmd.Parameters.AddWithValue("@name", stu.name);
+                cmd.Parameters.AddWithValue("@detailsid", stu.detailsid);
 
-                SqlDataReader dr = cmd.ExecuteReader();
+                con.Open();
 
-                while (dr.Read())
-                {
-                    Console.WriteLine(
-                        $"id : {dr["id"]}" +
-                        $"name : {dr["name"]}" +
-                        $"department : {dr["department"]}" +
-                        $"mark : {dr["mark"]}"
-                        );
-
-                }
+                int rows = cmd.ExecuteNonQuery();
+                Console.WriteLine(rows > 0 ? "student inserted successfully" : "insert failed");
             }
         }
     }

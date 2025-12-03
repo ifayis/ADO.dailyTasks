@@ -10,8 +10,15 @@ namespace day1
     {
         static void Main(string[] args)
         {
-            managestu details = new managestu();
-            details.getdetails();
+            managestu data = new managestu();
+
+            Student s1 = new Student
+            {
+                id = 9,
+                name = "leo",
+                detailsid = 109
+            };
+            data.insertdata(s1);
 
             Console.WriteLine();
         }

@@ -34,6 +34,7 @@ namespace day1
                         $"department : {dr["department"]}" +
                         $"mark : {dr["mark"]}"
                         );
+
                 }
             }
         }

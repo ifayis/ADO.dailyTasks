@@ -10,7 +10,7 @@ namespace day1
     {
         static void Main(string[] args)
         {
-            managestudent details = new managestudent();
+            managestu details = new managestu();
             details.getdetails();
 
             Console.WriteLine();

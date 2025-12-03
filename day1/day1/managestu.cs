@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace day1
 {
-    public class managestudent
+    public class managestu
     {
         private string conn = "server=localhost\\SQLEXPRESS;database=studentsDB;trusted_connection=true";
 

@@ -10,7 +10,10 @@ namespace day2
     {
         static void Main(string[] args)
         {
-            
+            dataadapter da = new dataadapter();
+            da.run();
+
+            Console.WriteLine();
         }
     }
 }

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace day2
 {
-    internal class Program
+    internal class data
     {
-        static void Main(string[] args)
-        {
-            
-        }
+      
     }
 }

@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="data.cs" />
     <Compile Include="dataadapter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="task.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

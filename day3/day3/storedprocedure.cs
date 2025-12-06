@@ -12,10 +12,10 @@ namespace day3
     {
         String connection = @"server=localhost\SQLEXPRESS;database=StudentsDB;trusted_connection=true";
         
-        public void getstudentdetails(int id)
+        public void getnameandage(int id)
         {
             using (SqlConnection con = new SqlConnection(connection)) 
-            using (SqlCommand cmd = new SqlCommand("getallstudents", con))
+            using (SqlCommand cmd = new SqlCommand("getnameandage", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("id", id);
@@ -39,5 +39,10 @@ namespace day3
                 }
             } 
         }
+
+        public void insertdata(int id)
+        {
+
+        } 
     }
 }

@@ -40,7 +40,7 @@ namespace day3
             } 
         }
 
-        public void insertdata(int id)
+        public void insertdata(String name, )
         {
 
         } 

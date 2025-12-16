@@ -10,8 +10,13 @@ namespace trial1
     {
         static void Main(string[] args)
         {
-            sp run = new sp();
-            run.main();
+            //sp run = new sp();
+            //run.main();
+
+            //Console.ReadKey();
+
+            sp2 run2 = new sp2();
+            run2.main2();
 
             Console.ReadKey();
         }

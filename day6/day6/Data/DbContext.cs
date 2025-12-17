@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using day6.Model;
 
 namespace day6.Data
 {
-    internal class DbContext
+    public class AppDbContext : DbContext
     {
-        public class AppDbContext : DbContext
-        {
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(
+                "Server=localhost\\SQLEXPRESS;Database=newstudentsDB;Trusted_Connection=True;");
         }
     }
 }

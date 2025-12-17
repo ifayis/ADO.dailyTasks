@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using day6.Models;
 
-namespace day6.Model
+namespace day6.Models
 {
     public class Course
     {
@@ -8,6 +8,6 @@ namespace day6.Model
         public string Name { get; set; }
         public string Teacher { get; set; }
 
-        public ICollection<Student> Students { get; set; } // navigation
+        public ICollection<Student> Students { get; set; }
     }
 }

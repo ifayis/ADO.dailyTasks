@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using day6.Model;
+﻿using day6.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace day6.Data
 {
@@ -10,8 +10,11 @@ namespace day6.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(
-                "Server=localhost\\SQLEXPRESS;Database=newstudentsDB;Trusted_Connection=True;");
+            if (!options.IsConfigured)
+            {
+                options.UseSqlServer(
+                    "Server=localhost\\SQLEXPRESS;Database=newstudentsDB;Trusted_Connection=True;TrustServerCertificate=True");
+            }
         }
     }
 }

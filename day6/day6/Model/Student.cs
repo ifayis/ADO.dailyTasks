@@ -13,6 +13,6 @@ namespace day6.Model
         public string Password { get; set; }
 
         public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public Course Course { get; set; }  // navigation
     }
 }

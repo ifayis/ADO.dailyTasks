@@ -8,6 +8,6 @@ namespace day6.Model
         public string Name { get; set; }
         public string Teacher { get; set; }
 
-        public ICollection<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; } // navigation
     }
 }

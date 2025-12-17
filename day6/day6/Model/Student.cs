@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace day6.Models
 {
+    [Table("Student")]
     public class Student
     {
         public int Id { get; set; }

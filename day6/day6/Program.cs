@@ -11,9 +11,7 @@ namespace day6
         {
             using (var context = new AppDbContext())
             {
-                // =========================
                 // CREATE (INSERT)
-                // =========================
                 var student = new Student
                 {
                     Name = "Fayis",
@@ -22,16 +20,14 @@ namespace day6
                     Email = "fayis@gmail.com",
                     Phone = "9876543210",
                     Password = "hashed_password",
-                    CourseId = 1   // make sure this CourseId exists
+                    CourseId = 1 
                 };
 
                 context.Students.Add(student);
                 context.SaveChanges();
                 Console.WriteLine("Student inserted");
 
-                // =========================
                 // READ ALL
-                // =========================
                 Console.WriteLine("\nAll Students:");
                 var students = context.Students.ToList();
 
@@ -40,9 +36,7 @@ namespace day6
                     Console.WriteLine($"{s.Id} - {s.Name} - {s.Age}");
                 }
 
-                // =========================
                 // READ BY ID
-                // =========================
                 var singleStudent = context.Students
                                            .FirstOrDefault(s => s.Id == student.Id);
 
@@ -51,9 +45,7 @@ namespace day6
                     Console.WriteLine($"\nFetched Student: {singleStudent.Name}");
                 }
 
-                // =========================
                 // UPDATE
-                // =========================
                 if (singleStudent != null)
                 {
                     singleStudent.Age = 23;
@@ -61,9 +53,7 @@ namespace day6
                     Console.WriteLine("Student updated");
                 }
 
-                // =========================
                 // FILTER
-                // =========================
                 Console.WriteLine("\nFiltered Students (Age > 21):");
                 var filtered = context.Students
                                       .Where(s => s.Age > 21)
@@ -74,9 +64,7 @@ namespace day6
                     Console.WriteLine(s.Name);
                 }
 
-                // =========================
                 // DELETE
-                // =========================
                 if (singleStudent != null)
                 {
                     context.Students.Remove(singleStudent);
